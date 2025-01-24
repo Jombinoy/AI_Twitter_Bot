@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Bot Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Bot Dashboard</h1>
+            <div class="status-indicator">
+                <span class="status-dot"></span>
+                <span class="status-text">Bot Status</span>
+            </div>
+        </header>
+
+        <main>
+            <section class="control-panel">
+                <h2>Control Panel</h2>
+                <button id="startBot" class="btn primary">Start Bot</button>
+                <button id="stopBot" class="btn danger">Stop Bot</button>
+            </section>
+
+            <section class="stats-panel">
+                <h2>Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Interactions</h3>
+                        <p id="totalInteractions">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Today's Tweets</h3>
+                        <p id="todayTweets">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Response Rate</h3>
+                        <p id="responseRate">0%</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tweets-panel">
+                <h2>Recent Interactions</h2>
+                <div class="tweets-container" id="tweetsContainer">
+                    <!-- Tweets will be added here dynamically -->
+                </div>
+                <div class="tweets-controls">
+                    <button id="loadMoreTweets" class="btn secondary">Load More</button>
+                </div>
+            </section>
+
+            <section class="activity-log">
+                <h2>Recent Activity</h2>
+                <div class="log-container" id="logContainer">
+                    <!-- Log entries will be added here dynamically -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
